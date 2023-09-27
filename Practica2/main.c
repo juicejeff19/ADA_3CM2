@@ -17,7 +17,7 @@ int main() {
     scanf("%d", &quantity);
     int numbers[quantity];
     for (int i = 0; i < quantity; ++i) {
-        numbers[i] = rand() % 1000;
+        numbers[i] = rand() % 99;
     }
     int option;
     while (1) { // Infinite loop
@@ -58,10 +58,12 @@ int main() {
                 clock_t end = clock();
                 double time = (double)(end - begin) / CLOCKS_PER_SEC;
                 printf("The time it took to sort the array was: %f\n", time);
-                printf("The sorted array is: \n");
-                int i;
-                for(i=0; i<quantity; i++){
-                    printf("%d\n", mergearray[i]);
+                if(quantity<50) {
+                    printf("The sorted array is: \n");
+                    int i;
+                    for (i = 0; i < quantity; i++) {
+                        printf("%d\n", mergearray[i]);
+                    }
                 }
                 break;
         }
@@ -147,9 +149,11 @@ void selectionSort(int quantity, int pInt[quantity]) {
     clock_t end = clock();
     double time = (double)(end - begin) / CLOCKS_PER_SEC;
     printf("The time it took to sort the array was: %f\n", time);
-    printf("The sorted array is: \n");
-    for(i=0; i<quantity; i++){
-        printf("%d\n", selectionarray[i]);
+    if(quantity<50) {
+        printf("The sorted array is: \n");
+        for (i = 0; i < quantity; i++) {
+            printf("%d\n", selectionarray[i]);
+        }
     }
 }
 
@@ -174,9 +178,11 @@ void insertionSort(int quantity, int pInt[quantity]) {
     clock_t end = clock();
     double time = (double)(end - begin) / CLOCKS_PER_SEC;
     printf("The time it took to sort the array was: %f\n", time);
-    printf("The sorted array is: \n");
-    for(i=0; i<quantity; i++){
-        printf("%d\n", insertionarray[i]);
+    if(quantity<50) {
+        printf("The sorted array is: \n");
+        for (i = 0; i < quantity; i++) {
+            printf("%d\n", insertionarray[i]);
+        }
     }
 }
 
@@ -201,9 +207,11 @@ void bubbleSort(int quantity, int numbubble[quantity]){
     clock_t end = clock();
     double time = (double)(end - begin) / CLOCKS_PER_SEC;
     printf("The time it took to sort the array was: %f\n", time);
-    printf("The sorted array is: \n");
-    for(i=0; i<quantity; i++){
-        printf("%d\n",bubblearray[i]);
+    if(quantity<50) {
+        printf("The sorted array is: \n");
+        for (i = 0; i < quantity; i++) {
+            printf("%d\n", bubblearray[i]);
+        }
     }
 
 }
